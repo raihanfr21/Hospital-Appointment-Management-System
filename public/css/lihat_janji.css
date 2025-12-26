@@ -1,0 +1,157 @@
+/* --- GLOBAL STYLE & VARIABLES --- */
+:root {
+    --primary: #2e7d32; /* Hijau UMRI */
+    --primary-hover: #1b5e20;
+    --accent: #ffca28; /* Kuning/Emas UMRI */
+    --bg-body: #f4f6f8; /* Abu-abu sangat muda untuk background */
+    --text-dark: #2d3748;
+    --text-grey: #718096;
+    --white: #ffffff;
+    --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-body); /* Ganti background jadi agak abu biar card pop-up */
+    color: var(--text-dark);
+}
+
+/* --- HEADER MODERN --- */
+/* Update CSS Header */
+header {
+    display: flex;
+    justify-content: space-between; /* Pisahkan grup Kiri dan grup Kanan mentok */
+    align-items: center;
+    padding: 15px 5%; /* Padding kiri-kanan */
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Style baru untuk pembungkus Logo + Teks */
+.header-left {
+    display: flex;
+    align-items: center; /* Pastikan logo & teks sejajar vertikal */
+    gap: 15px; /* JARAK antara Logo dan Tulisan (atur ini untuk mendekatkan/menjauhkan) */
+}
+
+/* Pastikan margin lama di-reset */
+.logo img {
+    height: 50px;
+    margin: 0; /* Hapus margin aneh-aneh sebelumnya */
+    display: block;
+}
+
+header p {
+    font-size: 18px;
+    font-weight: 600; /* Agak tebal biar tegas */
+    color: #2e7d32; /* Hijau UMRI */
+    margin: 0; /* Hapus margin-right 400px yang lama! */
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-grey);
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* --- Gunakan Header yang sama dari poin 1 --- */
+
+main {
+    padding: 40px 5%;
+}
+
+.table-container {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    padding: 0; /* Padding 0 agar header tabel nempel ke atas */
+    margin: 30px auto;
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden; /* Agar sudut tabel ikut melengkung */
+    border: 1px solid #e2e8f0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+/* Header Tabel */
+th {
+    background-color: #f8fafc;
+    color: var(--text-grey);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 20px 15px;
+    text-align: left;
+    border-bottom: 2px solid #edf2f7;
+}
+
+/* Isi Tabel */
+td {
+    padding: 16px 15px;
+    text-align: left;
+    color: var(--text-dark);
+    border-bottom: 1px solid #edf2f7;
+    font-size: 15px;
+}
+
+/* Hover Effect per baris */
+tr:hover td {
+    background-color: #f7fafc;
+}
+
+/* Hapus border kanan kiri agar terlihat clean */
+table, th, td {
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
+
+/* Kolom Aksi */
+td:last-child {
+    text-align: center;
+}
+
+/* Tombol Aksi di tabel */
+.btn-action {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #e53e3e; /* Merah untuk hapus/batal */
+    color: white;
+    border-radius: 6px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-action:hover {
+    background-color: #c53030;
+    text-decoration: none;
+}

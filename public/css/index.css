@@ -1,0 +1,275 @@
+/* --- GLOBAL STYLE & VARIABLES --- */
+:root {
+    --primary: #2e7d32; /* Hijau UMRI */
+    --primary-hover: #1b5e20;
+    --accent: #ffca28; /* Kuning/Emas UMRI */
+    --bg-body: #f4f6f8; /* Abu-abu sangat muda untuk background */
+    --text-dark: #2d3748;
+    --text-grey: #718096;
+    --white: #ffffff;
+    --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-body); /* Ganti background jadi agak abu biar card pop-up */
+    color: var(--text-dark);
+}
+
+/* --- HEADER MODERN --- */
+/* Update CSS Header */
+header {
+    display: flex;
+    justify-content: space-between; /* Pisahkan grup Kiri dan grup Kanan mentok */
+    align-items: center;
+    padding: 15px 5%; /* Padding kiri-kanan */
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Style baru untuk pembungkus Logo + Teks */
+.header-left {
+    display: flex;
+    align-items: center; /* Pastikan logo & teks sejajar vertikal */
+    gap: 15px; /* JARAK antara Logo dan Tulisan (atur ini untuk mendekatkan/menjauhkan) */
+}
+
+/* Pastikan margin lama di-reset */
+.logo img {
+    height: 50px;
+    margin: 0; /* Hapus margin aneh-aneh sebelumnya */
+    display: block;
+}
+
+header p {
+    font-size: 18px;
+    font-weight: 600; /* Agak tebal biar tegas */
+    color: #2e7d32; /* Hijau UMRI */
+    margin: 0; /* Hapus margin-right 400px yang lama! */
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-grey);
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* --- Lanjutkan kode Header di atas dengan ini --- */
+
+main {
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.halo-user {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+h1 {
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.sub-text {
+    font-size: 16px;
+    color: var(--text-grey);
+    margin-bottom: 40px;
+}
+
+/* --- MODERN SEARCH BAR --- */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    flex-wrap: wrap;
+}
+
+.search-bar input[type="text"],
+.search-bar select {
+    padding: 12px 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    width: 300px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.search-bar input:focus, .search-bar select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+/* --- DOCTOR CARDS (GRID SYSTEM) --- */
+.doctor-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Responsif otomatis */
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.doctor-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px); /* Efek naik saat hover */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: var(--primary);
+}
+
+.doctor-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #e2e8f0;
+}
+
+.doctor-card h3 {
+    font-size: 16px;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.doctor-card p {
+    font-size: 13px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* --- FOOTER STYLE --- */
+footer {
+    background-color: #2e7d32; /* Warna Hijau Primary */
+    color: white;
+    padding-top: 40px;
+    margin-top: auto; /* Agar footer selalu di bawah jika konten sedikit */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #ffca28; /* Aksen Kuning UMRI dikit biar cantik */
+    border-bottom: 2px solid #ffca28;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e8f5e9; /* Putih agak soft */
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ffca28; /* Berubah kuning saat di-hover */
+    padding-left: 5px; /* Efek geser dikit */
+}
+
+.footer-bottom {
+    background-color: #1b5e20; /* Hijau lebih gelap untuk baris copyright */
+    text-align: center;
+    padding: 15px;
+    font-size: 13px;
+    color: #c8e6c9;
+}
+
+/* --- CSS TAMBAHAN UNTUK LOGO FOOTER --- */
+
+.footer-logo img {
+    height: 70px; /* Ukuran logo footer sedikit lebih besar dari header */
+    width: auto;
+    margin-bottom: 15px; /* Jarak antara logo dan Judul RS */
+    background-color: white; /* Memberi latar putih agar logo terlihat jelas */
+    padding: 5px; /* Memberi jarak nafas di dalam kotak putih */
+    border-radius: 10px; /* Membuat sudut kotak logo melengkung halus */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Bayangan halus */
+    display: inline-block;
+}
+
+/* Pastikan kolom pertama rapi */
+.brand-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Logo rata kiri */
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

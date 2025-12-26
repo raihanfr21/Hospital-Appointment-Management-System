@@ -1,0 +1,192 @@
+/* --- GLOBAL STYLE & VARIABLES --- */
+:root {
+    --primary: #2e7d32; /* Hijau UMRI */
+    --primary-hover: #1b5e20;
+    --accent: #ffca28; /* Kuning/Emas UMRI */
+    --bg-body: #f4f6f8; /* Abu-abu sangat muda untuk background */
+    --text-dark: #2d3748;
+    --text-grey: #718096;
+    --white: #ffffff;
+    --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-body); /* Ganti background jadi agak abu biar card pop-up */
+    color: var(--text-dark);
+}
+
+/* --- HEADER MODERN --- */
+/* Update CSS Header */
+header {
+    display: flex;
+    justify-content: space-between; /* Pisahkan grup Kiri dan grup Kanan mentok */
+    align-items: center;
+    padding: 15px 5%; /* Padding kiri-kanan */
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Style baru untuk pembungkus Logo + Teks */
+.header-left {
+    display: flex;
+    align-items: center; /* Pastikan logo & teks sejajar vertikal */
+    gap: 15px; /* JARAK antara Logo dan Tulisan (atur ini untuk mendekatkan/menjauhkan) */
+}
+
+/* Pastikan margin lama di-reset */
+.logo img {
+    height: 50px;
+    margin: 0; /* Hapus margin aneh-aneh sebelumnya */
+    display: block;
+}
+
+header p {
+    font-size: 18px;
+    font-weight: 600; /* Agak tebal biar tegas */
+    color: #2e7d32; /* Hijau UMRI */
+    margin: 0; /* Hapus margin-right 400px yang lama! */
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-grey);
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* --- Gunakan Header yang sama dari poin 1 --- */
+
+main {
+    padding: 40px 20px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+p {
+    color: var(--text-grey);
+    margin-bottom: 30px;
+}
+
+.form-container {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    padding: 40px;
+    width: 100%;
+    max-width: 700px; /* Batas lebar agar enak dibaca */
+    border-top: 5px solid var(--primary); /* Aksen hijau di atas */
+}
+
+form {
+    display: grid;
+    gap: 20px;
+}
+
+/* Styling Input yang Modern */
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="text"], 
+input[type="date"], 
+input[type="time"], 
+select, 
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--text-dark);
+    background: #fdfdfd;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1); /* Ring hijau transparan */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Radio Group Layout */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Tombol Submit Modern */
+input[type="submit"] {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(46, 125, 50, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 10px rgba(46, 125, 50, 0.4);
+}
+
+/* Modal Styling */
+.modal-content {
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 30px;
+    border: none;
+}

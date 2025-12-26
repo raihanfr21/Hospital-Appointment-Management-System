@@ -1,0 +1,185 @@
+/* --- RESET & GLOBAL VARIABLES --- */
+:root {
+    --primary: #2e7d32; /* Hijau UMRI */
+    --primary-hover: #1b5e20;
+    --text-dark: #1a202c;
+    --text-grey: #718096;
+    --white: #ffffff;
+    --padding-card: 35px 30px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background: 
+        linear-gradient(rgba(30, 60, 30, 0.6), rgba(30, 60, 30, 0.8)),
+        url('../assets/umri ekoriparian.jpeg') no-repeat center center;
+    background-size: cover;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Background gambar + overlay hijau gelap transparan */
+    background: 
+        linear-gradient(rgba(30, 60, 30, 0.6), rgba(30, 60, 30, 0.8)),
+        url('../assets/umri ekoriparian.jpeg') no-repeat center center;
+    background-size: cover;
+    /* EFEK BLUR DI SINI */
+    filter: blur(8px); 
+    /* Diperbesar dikit biar pinggiran blurnya gak kelihatan bocor */
+    transform: scale(1.1);
+    z-index: -1; /* Taruh di belakang konten */
+}
+
+/* --- LOGIN/REGISTER CARD --- */
+.login-container {
+    background-color: var(--white);
+    padding: var(--padding-card);
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 420px; /* Lebar pas */
+    text-align: left;
+    position: relative;
+    animation: fadeInUp 0.6s ease;
+}
+
+/* --- HEADER CARD STYLE (YANG DIPERBAIKI) --- */
+.card-header {
+    text-align: center; /* KUNCI: Membuat Logo & Teks di tengah */
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 75px;
+    margin-bottom: 15px; /* Jarak logo ke tulisan */
+}
+
+/* H3: "Rumah Sakit Universitas Muhammadiyah Riau" */
+.card-header h3 {
+    font-size: 15px;
+    color: var(--primary); /* Jadi HIJAU */
+    font-weight: 600;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+/* H2: "Sistem Janji Temu" */
+.card-header h2 {
+    font-size: 22px;
+    color: var(--primary); /* Jadi HIJAU & Lebih Besar */
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* --- FORM INPUTS --- */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-dark);
+    background-color: #fdfdfd;
+    transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+    background-color: var(--white);
+}
+
+/* --- BUTTONS --- */
+input[type="submit"] {
+    background: var(--primary);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--primary-hover);
+}
+
+/* --- LINKS & FOOTER --- */
+.form-footer-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--text-grey);
+}
+
+.form-footer-text a {
+    color: var(--primary);
+    font-weight: 700; /* Link "Pasien" jadi tebal */
+    text-decoration: none;
+}
+
+.alert-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+
+#current-datetime {
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+    .card-header h2 { font-size: 20px; }
+    .card-header h3 { font-size: 14px; }
+}
